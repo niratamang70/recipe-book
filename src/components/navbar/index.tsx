@@ -1,66 +1,46 @@
 'use client';
-import {
-  Box,
-  Flex,
-  Avatar,
-  Text,
-  Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-  useColorMode,
-  Center,
-  HStack
-} from '@chakra-ui/react';
+import { Box, Flex, Button, useColorModeValue, Stack, useColorMode, HStack } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Fragment } from 'react';
+import NavLink from './NavLink';
+import HamburgerMenu from './HamburgerMenu';
+import { roboto } from '@/theme/fontsTheme';
 
-interface Props {
-  children: React.ReactNode;
-}
-const Links = ['Home', 'Recipes'];
-
-const NavLink = (props: Props) => {
-  const { children } = props;
-
-  return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700')
-      }}
-      href={'#'}
-    >
-      {children}
-    </Box>
-  );
+export const NAVBAR_ITEMS = [
+  { label: 'Home', link: '/' },
+  { label: 'Recipes', link: '/recipes' }
+];
+const hoverStyle = {
+  borderBottom: '2px',
+  borderBottomColor: 'orange'
 };
-
 export default function Navbar() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Fragment>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>Recipe</Box>
+          <Box fontFamily={roboto.style.fontFamily} fontWeight="500" color="orange" cursor="pointer">
+            Cook.io
+          </Box>
+          <HamburgerMenu />
           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-            {Links.map(link => (
-              <NavLink key={link}>{link}</NavLink>
+            {NAVBAR_ITEMS.map((item, index) => (
+              <NavLink key={index} href={item.link} _hover={hoverStyle}>
+                {item.label}
+              </NavLink>
             ))}
           </HStack>
-          <Flex alignItems={'center'}>
+          <Flex alignItems={'center'} display={{ base: 'none', md: 'flex' }}>
             <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>{colorMode === 'light' ? <MoonIcon /> : <SunIcon />}</Button>
+              <Box onClick={toggleColorMode} cursor="pointer">
+                {colorMode === 'light' ? (
+                  <MoonIcon _hover={{ background: 'transparent' }} />
+                ) : (
+                  <SunIcon _hover={{ bg: 'transparent' }} />
+                )}
+              </Box>
             </Stack>
           </Flex>
         </Flex>
