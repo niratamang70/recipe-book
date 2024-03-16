@@ -2,7 +2,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import AppWrapper from './AppWrapper';
-import { FC, ReactElement } from 'react';
+import { FC, Fragment, ReactElement } from 'react';
+import Navbar from '@/components/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,7 +18,12 @@ const RootLayout: FC<AppProps> = ({ children }) => {
         <title>Recipe Book</title>
       </head>
       <body id={'root'}>
-        <AppWrapper>{children}</AppWrapper>
+        <AppWrapper>
+          <Fragment>
+            <Navbar />
+            {children}
+          </Fragment>
+        </AppWrapper>
       </body>
     </html>
   );
