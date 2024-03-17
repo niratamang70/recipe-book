@@ -2,6 +2,7 @@
 import { roboto } from '@/theme/fontsTheme';
 import { Box, BoxProps, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 interface NavLinkProps extends BoxProps {
@@ -10,9 +11,19 @@ interface NavLinkProps extends BoxProps {
 }
 
 const NavLink = ({ children, href, ...props }: NavLinkProps) => {
+  const pathname = usePathname();
+
   return (
     <Link href={href} passHref>
-      <Box as="a" px={2} py={1} fontFamily={roboto.style.fontFamily} fontWeight="500" {...props}>
+      <Box
+        as="a"
+        px={2}
+        py={1}
+        fontFamily={roboto.style.fontFamily}
+        fontWeight="500"
+        {...props}
+        sx={pathname === href ? { ...props._hover } : {}}
+      >
         {children}
       </Box>
     </Link>

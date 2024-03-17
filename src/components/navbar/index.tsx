@@ -1,5 +1,5 @@
 'use client';
-import { Box, Flex, Button, useColorModeValue, Stack, useColorMode, HStack } from '@chakra-ui/react';
+import { Box, Flex, useColorModeValue, Stack, useColorMode, HStack } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Fragment } from 'react';
 import NavLink from './NavLink';
