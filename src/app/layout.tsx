@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import AppWrapper from './AppWrapper';
 import { FC, Fragment, ReactElement } from 'react';
 import Navbar from '@/components/navbar';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,12 +19,12 @@ const RootLayout: FC<AppProps> = ({ children }) => {
         <title>Recipe Book</title>
       </head>
       <body id={'root'}>
-        <AppWrapper>
+        <ChakraProvider>
           <Fragment>
             <Navbar />
             {children}
           </Fragment>
-        </AppWrapper>
+        </ChakraProvider>
       </body>
     </html>
   );
