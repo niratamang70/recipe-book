@@ -16,11 +16,12 @@ const NavLink = ({ children, href, ...props }: NavLinkProps) => {
   return (
     <Link href={href} passHref>
       <Box
-        as="a"
         px={2}
         py={1}
         fontFamily={roboto.style.fontFamily}
         fontWeight="500"
+        transition="all 0.4s ease-in-out"
+        tra
         {...props}
         sx={pathname === href ? { ...props._hover } : {}}
       >
