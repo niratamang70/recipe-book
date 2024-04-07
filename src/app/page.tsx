@@ -9,7 +9,8 @@ import {
   InputLeftElement,
   Icon,
   InputRightAddon,
-  useColorModeValue
+  useColorModeValue,
+  Heading
 } from '@chakra-ui/react';
 import React from 'react';
 import { homePageImages } from '../../images.config';
@@ -22,13 +23,16 @@ const Home = () => {
       backgroundImage={homePageImages.pizzaImage}
       backgroundSize="cover"
       backgroundPosition="center"
-      width="100vw"
+      width="calc(100vw-1rem)"
       height="60vh"
       display="flex"
       justifyContent="center"
       alignItems="center"
+      margin="1rem"
+      borderRadius="md"
     >
-      <Flex flexDirection="column" width={{ base: '90vw', lg: '40vw' }}>
+      <Flex flexDirection="column" width={{ base: '90vw', lg: '40vw' }} alignItems="center" gap="2rem">
+        <Heading color="white">Find your favorite dish?</Heading>
         <InputGroup size="lg" bg={useColorModeValue('gray.100', 'gray.900')} borderRadius="md">
           <InputLeftElement padding="0.5rem">
             <Icon as={GiKnifeFork} fontWeight="600" />

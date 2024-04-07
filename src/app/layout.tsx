@@ -1,7 +1,5 @@
 'use client';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import AppWrapper from './AppWrapper';
 import { FC, Fragment, ReactElement } from 'react';
 import Navbar from '@/components/navbar';
 import { ChakraProvider } from '@chakra-ui/react';
