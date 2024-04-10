@@ -1,10 +1,29 @@
 'use client';
 import ProductCard from '@/components/card';
-import { CheckIcon } from '@chakra-ui/icons';
-import { Flex, Box, InputGroup, Input, InputRightElement, Stack } from '@chakra-ui/react';
+import { Flex, Box, Button } from '@chakra-ui/react';
+import { Select, useChakraSelectProps } from 'chakra-react-select';
 import React from 'react';
+import { Controller, useForm } from 'react-hook-form';
 
 const RecipePage = () => {
+  const {
+    control,
+    handleSubmit,
+    watch,
+    setValue,
+    formState: { errors }
+  } = useForm();
+
+  const options = [
+    { value: 'option1', label: 'Option 1', colorScheme: 'red' },
+    { value: 'option2', label: 'Option 2' },
+    { value: 'option3', label: 'Option 3' }
+  ];
+
+  const onSubmit = (data: any) => {
+    console.log(data); // Access form data including the selected value
+  };
+
   return (
     <Box padding="1.5rem">
       <Flex
@@ -36,6 +55,32 @@ const RecipePage = () => {
           image={'https://kauveryhospital.com/blog/wp-content/uploads/2021/04/pizza-5179939_960_720.jpg'}
         />
       </Flex>
+
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <Controller
+          control={control}
+          name="option"
+          rules={{ required: 'Please enter at least one food group.' }}
+          render={({ field: { onChange, onBlur, value, name, ref }, fieldState: { error } }) => (
+            <Select
+              name={name}
+              ref={ref}
+              onChange={onChange}
+              value={value}
+              isInvalid={error?.message ? true : false}
+              colorScheme="orange"
+              options={options}
+              placeholder={'Select the options'}
+              closeMenuOnSelect={true}
+              useBasicStyles
+              // hideSelectedOptions
+              selectedOptionStyle="color"
+              selectedOptionColorScheme="red"
+            />
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
     </Box>
   );
 };
