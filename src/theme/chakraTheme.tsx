@@ -1,16 +1,25 @@
-'use client'
-import { ChakraProvider, extendBaseTheme, theme as chakraTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { FC, ReactNode } from 'react';
 
-interface AppThemeProviderProps {
+type AppThemeProviderProps = {
   children: ReactNode;
-}
-const { Button } = chakraTheme.components;
-const customTheme = extendBaseTheme({
+};
+
+const customTheme = extendTheme({
   components: {
-    Button
+    Container: {
+      baseStyle: {
+        maxW: {
+          xl: 'container.xl',
+          sm: 'container.sm',
+          md: 'container.md',
+          lg: 'container.lg'
+        }
+      }
+    }
   }
 });
+
 const AppThemeProvider: FC<AppThemeProviderProps> = ({ children }) => {
   return <ChakraProvider theme={customTheme}>{children}</ChakraProvider>;
 };
