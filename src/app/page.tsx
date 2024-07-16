@@ -78,15 +78,36 @@ const Home = () => {
             }}
           >
             <GridItem>
-              <Flex flexDirection="column" padding="0 1.5rem" gap="0.5rem">
-                <Image
-                  src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                  width="357"
-                  height="247"
-                  alt="noodles"
-                  objectFit="cover"
-                  style={{ borderRadius: '6px' }}
-                />
+              <Flex
+                flexDirection="column"
+                padding="0 1.5rem"
+                gap="0.5rem"
+                _hover={{
+                  color: 'orange'
+                }}
+              >
+                <Box
+                  borderRadius="6px"
+                  overflow="hidden"
+                  sx={{
+                    position: 'relative',
+                    '& img': {
+                      transition: 'transform 0.8s ease'
+                    },
+                    '&:hover img': {
+                      transform: 'scale(1.1)'
+                    }
+                  }}
+                >
+                  <Image
+                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
+                    width="357"
+                    height="247"
+                    alt="noodles"
+                    objectFit="cover"
+                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
+                  />
+                </Box>
                 <Box>
                   <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
@@ -102,15 +123,36 @@ const Home = () => {
               </Flex>
             </GridItem>
             <GridItem>
-              <Flex flexDirection="column" padding="0 1.5rem" gap="0.5rem">
-                <Image
-                  src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                  width="357"
-                  height="247"
-                  alt="noodles"
-                  objectFit="cover"
-                  style={{ borderRadius: '6px' }}
-                />
+              <Flex
+                flexDirection="column"
+                padding="0 1.5rem"
+                gap="0.5rem"
+                _hover={{
+                  color: 'orange'
+                }}
+              >
+                <Box
+                  borderRadius="6px"
+                  overflow="hidden"
+                  sx={{
+                    position: 'relative',
+                    '& img': {
+                      transition: 'transform 0.8s ease'
+                    },
+                    '&:hover img': {
+                      transform: 'scale(1.1)'
+                    }
+                  }}
+                >
+                  <Image
+                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
+                    width="357"
+                    height="247"
+                    alt="noodles"
+                    objectFit="cover"
+                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
+                  />
+                </Box>
                 <Box>
                   <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
@@ -124,17 +166,38 @@ const Home = () => {
                   </Text>
                 </Box>
               </Flex>
-            </GridItem>{' '}
+            </GridItem>
             <GridItem>
-              <Flex flexDirection="column" padding="0 1.5rem" gap="0.5rem">
-                <Image
-                  src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                  width="357"
-                  height="247"
-                  alt="noodles"
-                  objectFit="cover"
-                  style={{ borderRadius: '6px' }}
-                />
+              <Flex
+                flexDirection="column"
+                padding="0 1.5rem"
+                gap="0.5rem"
+                _hover={{
+                  color: 'orange'
+                }}
+              >
+                <Box
+                  borderRadius="6px"
+                  overflow="hidden"
+                  sx={{
+                    position: 'relative',
+                    '& img': {
+                      transition: 'transform 0.8s ease'
+                    },
+                    '&:hover img': {
+                      transform: 'scale(1.1)'
+                    }
+                  }}
+                >
+                  <Image
+                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
+                    width="357"
+                    height="247"
+                    alt="noodles"
+                    objectFit="cover"
+                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
+                  />
+                </Box>
                 <Box>
                   <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
