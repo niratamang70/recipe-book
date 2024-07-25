@@ -118,7 +118,8 @@ const Home = () => {
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                   </Flex>
-                  <Text fontSize="1.25rem" fontWeight="600">
+
+                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
                     Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
                   </Text>
                 </Box>
@@ -163,7 +164,7 @@ const Home = () => {
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                   </Flex>
-                  <Text fontSize="1.25rem" fontWeight="600">
+                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
                     Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
                   </Text>
                 </Box>
@@ -208,7 +209,7 @@ const Home = () => {
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                     <Icon as={FaStar} boxSize="1rem" color="orange" />
                   </Flex>
-                  <Text fontSize="1.25rem" fontWeight="600">
+                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
                     Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
                   </Text>
                 </Box>
@@ -287,7 +288,7 @@ const Home = () => {
                     style={{ borderRadius: '6px', width: '100%', height: '100%' }}
                   />
                 </Box>
-                <Text fontWeight="600" fontSize="1.25rem" transition='0.8s ease'>
+                <Text fontWeight="600" fontSize="1.25rem" transition="0.8s ease">
                   Ice Cream
                 </Text>
               </VStack>
