@@ -23,6 +23,8 @@ import { SearchIcon } from '@chakra-ui/icons';
 import { GiKnifeFork } from 'react-icons/gi';
 import Image from 'next/image';
 import { FaStar } from 'react-icons/fa6';
+import { CATEGORY } from '@/data/category';
+import CategoryCard from '@/components/card/CategoryCard';
 
 const Home = () => {
   return (
@@ -228,71 +230,11 @@ const Home = () => {
               lg: 'repeat(6, 1fr)'
             }}
           >
-            <GridItem>
-              <VStack px="0.75rem" my="1rem" spacing="0.5rem" _hover={{ color: 'orange' }}>
-                <Box
-                  borderRadius="full"
-                  overflow="hidden"
-                  width="10rem"
-                  height="10rem"
-                  sx={{
-                    position: 'relative',
-                    '& img': {
-                      transition: 'transform 0.8s ease'
-                    },
-                    '&:hover img': {
-                      transform: 'scale(1.1)'
-                    }
-                  }}
-                >
-                  <Image
-                    src="https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg"
-                    width="160"
-                    height="160"
-                    alt="noodles"
-                    layout="responsive"
-                    objectFit="cover"
-                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
-                  />
-                </Box>
-                <Text fontWeight="600" fontSize="1.25rem">
-                  Burger
-                </Text>
-              </VStack>
-            </GridItem>
-            <GridItem>
-              <VStack px="0.75rem" my="1rem" spacing="0.5rem" _hover={{ color: 'orange' }}>
-                <Box
-                  width="10rem"
-                  height="10rem"
-                  borderRadius="full"
-                  overflow="hidden"
-                  sx={{
-                    position: 'relative',
-                    '& img': {
-                      transition: 'transform 0.8s ease',
-                      objectFit: 'cover'
-                    },
-                    '&:hover img': {
-                      transform: 'scale(1.1)'
-                    }
-                  }}
-                >
-                  <Image
-                    src="https://www.foodiesfeed.com/wp-content/uploads/2023/10/bowl-of-ice-cream-with-chocolate.jpg"
-                    width="160"
-                    height="160"
-                    alt="noodles"
-                    layout="responsive"
-                    objectFit="cover"
-                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
-                  />
-                </Box>
-                <Text fontWeight="600" fontSize="1.25rem" transition="0.8s ease">
-                  Ice Cream
-                </Text>
-              </VStack>
-            </GridItem>
+            {CATEGORY.map(({id,...rest}) => (
+              <GridItem key={id}>
+                <CategoryCard {...rest}/>
+              </GridItem>
+            ))}
           </Grid>
         </Box>
       </Container>
