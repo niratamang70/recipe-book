@@ -11,20 +11,17 @@ import {
   useColorModeValue,
   Heading,
   Container,
-  Text,
   Grid,
-  GridItem,
-  HStack,
-  VStack
+  GridItem
 } from '@chakra-ui/react';
 import React, { Fragment } from 'react';
 import { homePageImages } from '../../images.config';
 import { SearchIcon } from '@chakra-ui/icons';
 import { GiKnifeFork } from 'react-icons/gi';
-import Image from 'next/image';
-import { FaStar } from 'react-icons/fa6';
 import { CATEGORY } from '@/data/category';
 import CategoryCard from '@/components/card/CategoryCard';
+import { RECIPE } from '@/data/recipe';
+import { RecipeCard } from '@/components/card/RecipeCard';
 
 const Home = () => {
   return (
@@ -81,142 +78,11 @@ const Home = () => {
               lg: 'repeat(3, 1fr)'
             }}
           >
-            <GridItem>
-              <Flex
-                flexDirection="column"
-                padding="0 1.5rem"
-                gap="0.5rem"
-                _hover={{
-                  color: 'orange'
-                }}
-              >
-                <Box
-                  borderRadius="6px"
-                  overflow="hidden"
-                  sx={{
-                    position: 'relative',
-                    '& img': {
-                      transition: 'transform 0.8s ease'
-                    },
-                    '&:hover img': {
-                      transform: 'scale(1.1)'
-                    }
-                  }}
-                >
-                  <Image
-                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                    width="357"
-                    height="247"
-                    alt="noodles"
-                    objectFit="cover"
-                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
-                  />
-                </Box>
-                <Box>
-                  <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                  </Flex>
-
-                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
-                    Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
-                  </Text>
-                </Box>
-              </Flex>
-            </GridItem>
-            <GridItem>
-              <Flex
-                flexDirection="column"
-                padding="0 1.5rem"
-                gap="0.5rem"
-                _hover={{
-                  color: 'orange'
-                }}
-              >
-                <Box
-                  borderRadius="6px"
-                  overflow="hidden"
-                  sx={{
-                    position: 'relative',
-                    '& img': {
-                      transition: 'transform 0.8s ease'
-                    },
-                    '&:hover img': {
-                      transform: 'scale(1.1)'
-                    }
-                  }}
-                >
-                  <Image
-                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                    width="357"
-                    height="247"
-                    alt="noodles"
-                    objectFit="cover"
-                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
-                  />
-                </Box>
-                <Box>
-                  <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                  </Flex>
-                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
-                    Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
-                  </Text>
-                </Box>
-              </Flex>
-            </GridItem>
-            <GridItem>
-              <Flex
-                flexDirection="column"
-                padding="0 1.5rem"
-                gap="0.5rem"
-                _hover={{
-                  color: 'orange'
-                }}
-              >
-                <Box
-                  borderRadius="6px"
-                  overflow="hidden"
-                  sx={{
-                    position: 'relative',
-                    '& img': {
-                      transition: 'transform 0.8s ease'
-                    },
-                    '&:hover img': {
-                      transform: 'scale(1.1)'
-                    }
-                  }}
-                >
-                  <Image
-                    src="https://static01.nyt.com/images/2022/12/23/multimedia/afg-spaghetti-alla-assassina-1-19ef/afg-spaghetti-alla-assassina-1-19ef-master768.jpg?width=1280&quality=75&auto=webp"
-                    width="357"
-                    height="247"
-                    alt="noodles"
-                    objectFit="cover"
-                    style={{ borderRadius: '6px', width: '100%', height: '100%' }}
-                  />
-                </Box>
-                <Box>
-                  <Flex flexDirection="row" alignItems="center" gap="0.25rem" marginBottom="0.25rem">
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                    <Icon as={FaStar} boxSize="1rem" color="orange" />
-                  </Flex>
-                  <Text fontSize="1.25rem" fontWeight="600" transition="0.8s ease">
-                    Spaghetti all'Assassina (Spicy Singed Tomato Pasta)
-                  </Text>
-                </Box>
-              </Flex>
-            </GridItem>
+            {RECIPE.map(({ id, ...rest }) => (
+              <GridItem key={id}>
+                <RecipeCard {...rest} />
+              </GridItem>
+            ))}
           </Grid>
         </Box>
         <Box>
@@ -230,9 +96,9 @@ const Home = () => {
               lg: 'repeat(6, 1fr)'
             }}
           >
-            {CATEGORY.map(({id,...rest}) => (
+            {CATEGORY.map(({ id, ...rest }) => (
               <GridItem key={id}>
-                <CategoryCard {...rest}/>
+                <CategoryCard {...rest} />
               </GridItem>
             ))}
           </Grid>
