@@ -7,7 +7,7 @@ interface CategoryCardProps {
   imageUrl: string;
 }
 
-const CategoryCard:FC<CategoryCardProps> = ({title,imageUrl}) => {
+const CategoryCard: FC<CategoryCardProps> = ({ title, imageUrl }) => {
   return (
     <VStack px="0.75rem" my="1rem" spacing="0.5rem" _hover={{ color: 'orange' }}>
       <Box
@@ -35,7 +35,7 @@ const CategoryCard:FC<CategoryCardProps> = ({title,imageUrl}) => {
           style={{ borderRadius: '6px', width: '100%', height: '100%' }}
         />
       </Box>
-      <Text fontWeight="600" fontSize="1.25rem">
+      <Text fontWeight="600" fontSize="1.25rem" transition="0.8s ease">
         {title}
       </Text>
     </VStack>
