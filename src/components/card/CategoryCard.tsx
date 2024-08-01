@@ -9,12 +9,12 @@ interface CategoryCardProps {
 
 const CategoryCard: FC<CategoryCardProps> = ({ title, imageUrl }) => {
   return (
-    <VStack px="0.75rem" my="1rem" spacing="0.5rem" _hover={{ color: 'orange' }}>
+    <VStack my="1rem" spacing="0.5rem" _hover={{ color: 'orange' }}>
       <Box
         borderRadius="full"
         overflow="hidden"
-        width="10rem"
-        height="10rem"
+        width="12rem"
+        height="12rem"
         sx={{
           position: 'relative',
           '& img': {
