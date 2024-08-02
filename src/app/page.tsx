@@ -68,7 +68,7 @@ const Home = () => {
         </Flex>
       </Box>
       <Container>
-        <Box>
+        <Box my="3rem">
           <Heading fontSize="2.25rem" padding="1rem 0" fontFamily={playFair.style.fontFamily} fontWeight="700">
             Super Delicious
           </Heading>
@@ -87,7 +87,7 @@ const Home = () => {
             ))}
           </Grid>
         </Box>
-        <Box>
+        <Box my="3rem">
           <Heading fontSize="2.25rem" padding="1rem 0" fontFamily={playFair.style.fontFamily} fontWeight="700">
             Popular Categories
           </Heading>
