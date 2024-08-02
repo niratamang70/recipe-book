@@ -23,7 +23,7 @@ export const RecipeCard: FC<RecipeCardProps> = ({ title, rating, imageUrl }) => 
         borderRadius="6px"
         overflow="hidden"
         position="relative"
-        width={{ base: '100%', md: '22.313rem' }}
+        width="100%"
         height="15.438rem"
         sx={{
           '& img': {
