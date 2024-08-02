@@ -22,6 +22,7 @@ import { CATEGORY } from '@/data/category';
 import CategoryCard from '@/components/card/CategoryCard';
 import { RECIPE } from '@/data/recipe';
 import { RecipeCard } from '@/components/card/RecipeCard';
+import { playFair } from '@/theme/fontsTheme';
 
 const Home = () => {
   return (
@@ -68,7 +69,7 @@ const Home = () => {
       </Box>
       <Container>
         <Box>
-          <Heading fontSize="2.25rem" padding="1rem 0" fontWeight="700">
+          <Heading fontSize="2.25rem" padding="1rem 0" fontFamily={playFair.style.fontFamily} fontWeight="700">
             Super Delicious
           </Heading>
           <Grid
@@ -87,7 +88,7 @@ const Home = () => {
           </Grid>
         </Box>
         <Box>
-          <Heading fontSize="2.25rem" padding="1rem 0" fontWeight="700">
+          <Heading fontSize="2.25rem" padding="1rem 0" fontFamily={playFair.style.fontFamily} fontWeight="700">
             Popular Categories
           </Heading>
           <Grid
