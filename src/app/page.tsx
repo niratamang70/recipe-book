@@ -77,6 +77,7 @@ const Home = () => {
               md: 'repeat(2, 1fr)',
               lg: 'repeat(3, 1fr)'
             }}
+            gap={8}
           >
             {RECIPE.map(({ id, ...rest }) => (
               <GridItem key={id}>
